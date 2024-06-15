@@ -1,0 +1,33 @@
+<table>
+    <thead>
+        <tr>
+           <th>No.Registro</th>
+           <th>Nombre:</th>
+           <th>Descripcion:</th>
+           <th>Existe Tratamiento:</th>
+           <th>Origen/Causa:</th>
+           <th>Tipo de patologia:</th>
+           <th>Operaciones:</th>
+        </tr>
+    </thead>
+
+    <tbody>
+{{#each tasks}}
+<tr>
+    <td>{{@index}}</td>
+    <td>{{title}}</td>
+    <td>{{description}}</td>
+    <td>{{description1}}</td>
+    <td>{{description2}}</td>
+    <td>{{description3}}</td>
+    <td>
+        <button>Listo</button>
+        <button>Eliminar</button>
+        <a href="/edit/{{_id}}">Actualizar</a>
+    </td>
+    
+</tr>
+{{/each}}
+    </tbody>
+
+</table>

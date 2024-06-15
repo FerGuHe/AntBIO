@@ -1,0 +1,12 @@
+<form action="/edit/{{task._id}}" method="POST">
+    <input type="text" name="title" placeholder="Nombre" value="{{task.title}}">
+    <textarea name="description" rows="3" placeholder="Añada descripcion" >{{task.description}}</textarea>
+    <textarea name="description1" rows="3" placeholder="Existe Tratamiento" >{{task.description1}}</textarea>
+    <textarea name="description2" rows="3" placeholder="Origen/Causa" >{{task.description2}}</textarea>
+    <select name="description3" rows="3" placeholder="Existe Tratamiento (SI/NO)">
+        {{task.description3}}
+      <option value="NO">No</option>
+      <option value="SI">Si</option>
+    </select>
+    <button>Actualizar</button>
+</form>

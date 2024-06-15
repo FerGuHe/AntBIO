@@ -1,0 +1,48 @@
+<form action="/tasks/add" method="POST">
+
+  <div>
+    <label for="title">Nombre de la patologia: </label>
+    <input type="text" name="title" placeholder="Nombre/Titulo" id="title" />
+  </div>
+
+  <div>
+    <label for="description">Descripcion: </label>
+    <textarea
+      name="description"
+      placeholder="Descripcion"
+      id="description"
+    ></textarea>
+  </div>
+
+  <div>
+    <label for="description1">Origen/Causa de la patologia: </label>
+    <textarea
+      name="description1"
+      placeholder="Origen/Causa"
+      id="description1"
+    ></textarea>
+  </div>
+
+  <div>
+    <label for="description2">Tipo de patologia: </label>
+    <textarea
+      name="description2"
+      placeholder="Tipo"
+      id="description2"
+    ></textarea>
+  </div>
+
+  <div>
+    <label for="description3">Existe tratamiento para la patologia: </label>
+    <select name="description3" id="description3">
+      <option value="NO">No</option>
+      <option value="SI">Si</option>
+    </select>
+  </div>
+
+  <button>Registrar</button>
+
+</form>
+
+{{> tasks/taskForm}}
+{{> tasks/taskTable}}
