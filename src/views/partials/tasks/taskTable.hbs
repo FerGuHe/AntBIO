@@ -4,10 +4,10 @@
            <th>No.Registro</th>
            <th>Nombre:</th>
            <th>Descripcion:</th>
-           <th>Existe Tratamiento:</th>
-           <th>Origen/Causa:</th>
            <th>Tipo de patologia:</th>
-           <th>Operaciones:</th>
+           <th>Origen/Causa:</th>
+           <th>Existe Tratamiento:</th>
+           <th>Modificar Registro:</th>
         </tr>
     </thead>
 
@@ -21,8 +21,14 @@
     <td>{{description2}}</td>
     <td>{{description3}}</td>
     <td>
-        <button>Listo</button>
-        <button>Eliminar</button>
+        
+        {{#if done}}
+            <a href="/toggleDone/{{_id}}">Pendiente</a>
+        {{else}}
+        <a href="/toggleDone/{{_id}}">Listo</a>
+        {{/if}}
+
+        <a href="/delete/{{_id}}">Eliminar</a>
         <a href="/edit/{{_id}}">Actualizar</a>
     </td>
     
