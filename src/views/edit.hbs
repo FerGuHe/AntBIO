@@ -1,12 +1,40 @@
-<form action="/edit/{{task._id}}" method="POST">
-    <input type="text" name="title" placeholder="Nombre" value="{{task.title}}">
-    <textarea name="description" rows="3" placeholder="Añada descripcion" >{{task.description}}</textarea>
-    <textarea name="description1" rows="3" placeholder="Existe Tratamiento" >{{task.description1}}</textarea>
-    <textarea name="description2" rows="3" placeholder="Origen/Causa" >{{task.description2}}</textarea>
-    <select name="description3" rows="3" placeholder="Existe Tratamiento (SI/NO)">
-        {{task.description3}}
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form action="/edit/{{task._id}}" method="POST" class="p-3 border rounded shadow-sm">
+        
+        <div class="mb-3">
+          <label for="title" class="form-label">Nombre de la patología:</label>
+          <input type="text" class="form-control" name="title" placeholder="Nombre" value="{{task.title}}">
+        </div>
+        
+        <div class="mb-3">
+          <label for="description" class="form-label">Descripción:</label>
+          <textarea class="form-control" name="description" rows="3" placeholder="Añada descripción">{{task.description}}</textarea>
+        </div>
+        
+        <div class="mb-3">
+          <label for="description1" class="form-label">Tratamiento:</label>
+          <textarea class="form-control" name="description1" rows="3" placeholder="Existe Tratamiento">{{task.description1}}</textarea>
+        </div>
+        
+        <div class="mb-3">
+          <label for="description2" class="form-label">Origen/Causa:</label>
+          <textarea class="form-control" name="description2" rows="3" placeholder="Origen/Causa">{{task.description2}}</textarea>
+        </div>
+        
+        <div class="mb-3">
+          <label for="description3" class="form-label">Existe Tratamiento (SI/NO):</label>
+          <select class="form-select" name="description3">
+            {{task.description3}}
       <option value="NO">No</option>
       <option value="SI">Si</option>
-    </select>
-    <button>Actualizar</button>
-</form>
+          </select>
+        </div>
+        
+        <button type="submit" class="btn btn-primary w-100">Actualizar</button>
+      </form>
+    </div>
+  </div>
+</div>

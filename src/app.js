@@ -26,3 +26,7 @@ app.use(express.urlencoded({extended: false}));
 
  app.use(indexRoutes);
  export default app;
+
+ //static files}
+ 
+ app.use('/images', express.static(path.join(__dirname, 'images')));
