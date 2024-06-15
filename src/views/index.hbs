@@ -1,48 +1,76 @@
-<form action="/tasks/add" method="POST">
-
-  <div>
-    <label for="title">Nombre de la patologia: </label>
-    <input type="text" name="title" placeholder="Nombre/Titulo" id="title" />
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <form action="/tasks/add" method="POST" class="needs-validation" novalidate>
+      
+        <div class="mb-3">
+          <label for="title" class="form-label">Nombre de la patología:</label>
+          <input type="text" class="form-control" name="title" placeholder="Nombre/Título" id="title" required />
+          <div class="invalid-feedback">
+            Por favor, ingresa el nombre de la patología.
+          </div>
+        </div>
+      
+        <div class="mb-3">
+          <label for="description" class="form-label">Descripción:</label>
+          <textarea class="form-control" name="description" placeholder="Descripción" id="description" required></textarea>
+          <div class="invalid-feedback">
+            Por favor, ingresa una descripción.
+          </div>
+        </div>
+      
+        <div class="mb-3">
+          <label for="description1" class="form-label">Origen/Causa de la patología:</label>
+          <textarea class="form-control" name="description1" placeholder="Origen/Causa" id="description1" required></textarea>
+          <div class="invalid-feedback">
+            Por favor, ingresa el origen o causa de la patología.
+          </div>
+        </div>
+      
+        <div class="mb-3">
+          <label for="description2" class="form-label">Tipo de patología:</label>
+          <textarea class="form-control" name="description2" placeholder="Tipo" id="description2" required></textarea>
+          <div class="invalid-feedback">
+            Por favor, ingresa el tipo de patología.
+          </div>
+        </div>
+      
+        <div class="mb-3">
+          <label for="description3" class="form-label">¿Existe tratamiento para la patología?</label>
+          <select class="form-select" name="description3" id="description3" required>
+            <option value="" disabled selected>Seleccione una opción</option>
+            <option value="NO">No</option>
+            <option value="SI">Sí</option>
+          </select>
+          <div class="invalid-feedback">
+            Por favor, selecciona si existe tratamiento.
+          </div>
+        </div>
+      
+        <button type="submit" class="btn btn-primary w-100">Registrar</button>
+      
+      </form>
+    </div>
   </div>
-
-  <div>
-    <label for="description">Descripcion: </label>
-    <textarea
-      name="description"
-      placeholder="Descripcion"
-      id="description"
-    ></textarea>
-  </div>
-
-  <div>
-    <label for="description1">Origen/Causa de la patologia: </label>
-    <textarea
-      name="description1"
-      placeholder="Origen/Causa"
-      id="description1"
-    ></textarea>
-  </div>
-
-  <div>
-    <label for="description2">Tipo de patologia: </label>
-    <textarea
-      name="description2"
-      placeholder="Tipo"
-      id="description2"
-    ></textarea>
-  </div>
-
-  <div>
-    <label for="description3">Existe tratamiento para la patologia: </label>
-    <select name="description3" id="description3">
-      <option value="NO">No</option>
-      <option value="SI">Si</option>
-    </select>
-  </div>
-
-  <button>Registrar</button>
-
-</form>
+</div>
 
 {{> tasks/taskForm}}
+<div><p><p></p></p></div>
 {{> tasks/taskTable}}
+
+<script>
+  // JavaScript para la validación de formularios de Bootstrap
+  (function () {
+    'use strict'
+    var forms = document.querySelectorAll('.needs-validation')
+    Array.prototype.slice.call(forms).forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
+</script>
